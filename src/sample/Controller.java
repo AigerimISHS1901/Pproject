@@ -54,7 +54,20 @@ public class Controller {
                 System.out.println("Error");
         });
         signin_button.setOnAction(event -> {
-            openNewScene1("/sample/signUp.fxml");
+            signin_button.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/signUp.fxml"));
+
+            try {
+                loader1.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root1 = loader1.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
         });
     }
 
@@ -76,14 +89,14 @@ public class Controller {
         }
 
         if(counter >= 1){
-            openNewScene1("/sample/mainWindow.fxml");
+
+            openNewScene1();
         }
     }
-    public void openNewScene1(String window){
-        //signin_button.getScene().getWindow().hide();
+    public void openNewScene1(){
+        login_button.getScene().getWindow().hide();
         FXMLLoader loader1=new FXMLLoader();
-        loader1.setLocation(getClass().getResource(window));
-
+        loader1.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
         try{
             loader1.load();
         }catch (IOException e){
@@ -93,7 +106,7 @@ public class Controller {
         Parent root1=loader1.getRoot();
         Stage stage=new Stage();
         stage.setScene(new Scene(root1));
-        stage.showAndWait();
+        stage.show();
     }
 
 }

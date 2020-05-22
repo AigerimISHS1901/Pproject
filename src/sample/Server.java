@@ -13,7 +13,6 @@ public class Server {
             System.out.println("Client connected!");
             DatabaseHandler handler = new DatabaseHandler();
             handler.getDbConnection();
-            //ObjectOutputStream toClient = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             User user = null;
             if((user = (User)in.readObject()) != null){

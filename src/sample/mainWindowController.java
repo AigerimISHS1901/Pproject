@@ -6,13 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static sample.Main.books;
 
 public class mainWindowController {
 
@@ -30,9 +31,6 @@ public class mainWindowController {
 
     @FXML
     private Button programming_button;
-
-    @FXML
-    private TextField search_textfield;
 
     @FXML
     private Button my_books_button;
@@ -54,11 +52,47 @@ public class mainWindowController {
 
     @FXML
     private ImageView best3_img;
+    @FXML
+    private Label n1;
+
+    @FXML
+    private Label n3;
+
+    @FXML
+    private Label n5;
+
+    @FXML
+    private Label n2;
+
+    @FXML
+    private Label n4;
+
+    @FXML
+    private Label n6;
+
+    @FXML
+    private Button add1;
+
+    @FXML
+    private Button add2;
+
+    @FXML
+    private Button add3;
+
 
     @FXML
     void initialize() {
+        add1.setOnAction(event -> {
+            books.add(new Book("Guard", "Terry Pratchett"));
+        });
+        add2.setOnAction(event -> {
+            books.add(new Book("Lessons", "Gisele Bundchen"));
+        });
+        add3.setOnAction(event -> {
+            books.add(new Book("Black holes", "Stephen Hawking"));
+        });
         adventure_button.setOnAction(event -> {
-             //adventure_button.getScene().getWindow().hide();
+            adventure_button.getScene().getWindow().hide();
             FXMLLoader loader3 = new FXMLLoader();
             loader3.setLocation(getClass().getResource("/sample/Adventure_books.fxml"));
             try {
@@ -69,68 +103,75 @@ public class mainWindowController {
             Parent root3 = loader3.getRoot();
             Stage stage = new Stage();
             stage.setScene(new Scene(root3));
-            stage.showAndWait();
+            stage.show();
 
         });
         programming_button.setOnAction(event -> {
-           // programming_button.getScene().getWindow().hide();
-            FXMLLoader loader4 = new FXMLLoader();
-            loader4.setLocation(getClass().getResource("/sample/Programming_books.fxml"));
+            programming_button.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/Programming_books.fxml"));
+
             try {
-                loader4.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root4 = loader4.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root4));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
         art_button.setOnAction(event -> {
-           // art_button.getScene().getWindow().hide();
-            FXMLLoader loader5 = new FXMLLoader();
-            loader5.setLocation(getClass().getResource("/sample/Art_books.fxml"));
+            art_button.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/Art_books.fxml"));
+
             try {
-                loader5.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root5 = loader5.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root5));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
         biography_button.setOnAction(event -> {
-           // biography_button.getScene().getWindow().hide();
-            FXMLLoader loader6 = new FXMLLoader();
-            loader6.setLocation(getClass().getResource("/sample/Biography_books.fxml"));
+            biography_button.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/Biography_books.fxml"));
+
             try {
-                loader6.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root6 = loader6.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root6));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
         my_books_button.setOnAction(event -> {
-            // my_books_button.getScene().getWindow().hide();
-            FXMLLoader loader7 = new FXMLLoader();
-            loader7.setLocation(getClass().getResource("/sample/My_books.fxml"));
+            my_books_button.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/My_books.fxml"));
+
             try {
-                loader7.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root7 = loader7.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root7));
-            stage.showAndWait();
 
+            Parent root1 = loader1.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
         });
 
     }

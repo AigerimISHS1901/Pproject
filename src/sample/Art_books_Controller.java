@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import static sample.Main.books;
 
 public class Art_books_Controller {
@@ -76,21 +77,20 @@ public class Art_books_Controller {
     @FXML
     void initialize() {
         back.setOnAction(event -> {
-            //back.getScene().getWindow().hide();
-
-            FXMLLoader loader9 = new FXMLLoader();
-
-            loader9.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
+            back.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
 
             try {
-                loader9.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root9 = loader9.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root9));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
         add1.setOnAction(event -> {

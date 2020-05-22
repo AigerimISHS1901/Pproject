@@ -75,23 +75,20 @@ public class Biography_books_Controller {
     @FXML
     void initialize() {
         back.setOnAction(event -> {
-            //back.getScene().getWindow().hide();
-
-
-            FXMLLoader loader10 = new FXMLLoader();
-
-            loader10.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
+            back.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
 
             try {
-                loader10.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root10 = loader10.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root10));
-            stage.showAndWait();
 
+            Parent root1 = loader1.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
         });
         add1.setOnAction(event -> {
             books.add(new Book( "Choise", "Edith Eger"));

@@ -25,7 +25,7 @@ public class Book  {
         this.author = author;
     }
     public String toString(){
-        return "Book name: "+name+" Author name: "+author+"\n";
+        return "Book name: "+name+"/"+ "Author name: "+author+"\n";
     }
 
 

@@ -5,13 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import static sample.Main.books;
 
 public class My_books_Controller {
@@ -35,25 +37,27 @@ public class My_books_Controller {
     private Label labelll;
 
     @FXML
+    private Label label12;
+
+    @FXML
     void initialize() {
         String s=books.toString();
         text.setText(s);
         back.setOnAction(event -> {
-            //back.getScene().getWindow().hide();
-
-            FXMLLoader loader12 = new FXMLLoader();
-
-            loader12.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
+            back.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
 
             try {
-                loader12.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root12 = loader12.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root12));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
     }

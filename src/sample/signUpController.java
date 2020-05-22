@@ -49,18 +49,20 @@ public class signUpController {
     void initialize() {
         back_button.setOnAction(event -> {
             back_button.getScene().getWindow().hide();
-            FXMLLoader loader2=new FXMLLoader();
-            loader2.setLocation(getClass().getResource("/sample/sample.fxml"));
-            try{
-                loader2.load();
-            }catch (IOException e){
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/sample.fxml"));
+
+            try {
+                loader1.load();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            Parent root2=loader2.getRoot();
-            Stage stage=new Stage();
-            stage.setScene(new Scene(root2));
-            stage.showAndWait();
+            Parent root1 = loader1.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+
         });
 
 
@@ -70,15 +72,15 @@ public class signUpController {
     }
 
     private void SignUpNewUser() {
-        DatabaseHandler dbHandler=new DatabaseHandler();
+        DatabaseHandler dbHandler = new DatabaseHandler();
 
-        String firstname=name_text.getText();
-        String surname=surname_text.getText();
-        String loginname=login_text.getText();
-        String password=password_text.getText();
-        String email=email_text.getText();
+        String firstname = name_text.getText();
+        String surname = surname_text.getText();
+        String loginname = login_text.getText();
+        String password = password_text.getText();
+        String email = email_text.getText();
 
-        User user=new User(firstname, surname, loginname, password,email );
+        User user = new User(firstname, surname, loginname, password, email);
 
         dbHandler.signUpUser(user);
     }

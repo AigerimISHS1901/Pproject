@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import static sample.Main.books;
 
 public class Adventure_books_Controller {
@@ -76,21 +77,20 @@ public class Adventure_books_Controller {
     @FXML
     void initialize() {
         back.setOnAction(event -> {
-            //back.getScene().getWindow().hide();
-
-            FXMLLoader loader8 = new FXMLLoader();
-
-            loader8.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
+            back.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
 
             try {
-                loader8.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root8 = loader8.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root8));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
         add1.setOnAction(event -> {

@@ -77,21 +77,20 @@ public class Programming_books_Controller {
     @FXML
     void initialize() {
         back.setOnAction(event -> {
-           // back.getScene().getWindow().hide();
-
-            FXMLLoader loader11 = new FXMLLoader();
-
-            loader11.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
+            back.getScene().getWindow().hide();
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/sample/mainWindow.fxml"));
 
             try {
-                loader11.load();
+                loader1.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root11 = loader11.getRoot();
+
+            Parent root1 = loader1.getRoot();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root11));
-            stage.showAndWait();
+            stage.setScene(new Scene(root1));
+            stage.show();
 
         });
         add1.setOnAction(event -> {
